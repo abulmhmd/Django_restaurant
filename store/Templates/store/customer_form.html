@@ -1,0 +1,33 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<style>
+    h1 {text-align: center;}
+    /*
+    p {text-align: center;}
+    div {text-align: center;}
+    */
+</style>
+<h1>CUSTOMER FEEDBACK</h1>
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="fname">Your Name</label>
+            <input name='name' type="text" class="form-control" id="fname" placeholder="Your Name" required>
+        </div>
+        <div class='form-group'>
+            <label for="exampleInputEmail1">Email address</label>
+            <input name='email' type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your email" required>
+        </div>
+        <div class='form-group'>
+            <label for="subject">Subject</label>
+            <textarea name='subject' type="text" class="form-control" id="subject" placeholder="tell me about our service" style="height: 200px;" required></textarea>
+            
+            <input class="btn btn-success btn-lg mt-1 ml-4" type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+{% endblock content %}
+
+
